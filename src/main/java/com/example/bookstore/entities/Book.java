@@ -1,9 +1,7 @@
 package com.example.bookstore.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "books")
@@ -15,11 +13,12 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
 
     private String author;
 
-    private int year;
+    private Integer year;
 
     private String description;
 }
